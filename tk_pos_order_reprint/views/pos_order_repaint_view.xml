@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+         <record id="wk_pos_ext_form" model="ir.ui.view">
+            <field name="name">pos.config.conf.form</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form" />
+            <field name="arch" type="xml">
+                 
+                <field name="iface_big_scrollbars" position="after">
+                  
+                <field name="product_category"/>  
+                
+                </field>
+            </field> 
+        </record>
+    </data>
+</openerp>
