@@ -29,6 +29,7 @@ openerp.tk_pos_order_reprint = function (instance, module) {
             var self = this;
             this._super();
 
+
             this.$('.order-button').click(function (options) {
 
                 var current_scr = self.pos_widget.screen_selector.get_current_screen();
@@ -37,8 +38,10 @@ openerp.tk_pos_order_reprint = function (instance, module) {
 
                 }
                 else {
+
                     var button = new module.PosOrderScreenWidget(self);
                     self.pos_widget.screen_selector.set_current_screen('clientlist');
+                    sleep(500);
                     setTimeout(function () {
                         button.replace('.clientlist-screen .screen-content');
                     }, 25);
@@ -49,6 +52,15 @@ openerp.tk_pos_order_reprint = function (instance, module) {
         },
 
     });
+
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds){
+                break;
+            }
+        }
+    }
 
     module.Order = module.Order.extend({
 
